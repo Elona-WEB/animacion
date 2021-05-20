@@ -64,7 +64,7 @@ export default function Animation() {
 
     //ANIMACIONES CON BOTONES
     const b1 = d3.select("#b2005");
-    b1.on("click", function () {
+    b1.on("click", () => {
       const newData = g.selectAll("rect").data(data);
       newData
         .enter()
@@ -85,7 +85,7 @@ export default function Animation() {
 
     const b2 = d3.select("#b2006");
 
-    b2.on("click", function () {
+    b2.on("click", () => {
       const newData = g.selectAll("rect").data(data);
       newData
         .enter()
