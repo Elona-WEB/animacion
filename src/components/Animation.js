@@ -30,17 +30,15 @@ export default function Animation() {
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
     //Forma inicial
-    const y = d3.scaleLinear().domain([0, 45]).range([iheight, 0]);
-
+    const y = d3.scaleLinear().domain([0, 50]).range([iheight, 0]);
     const x = d3
       .scaleBand()
       .domain(data.map((d) => d.name))
       .range([0, iwidth])
       .padding(0.1);
 
-    const bars = g.selectAll("rect").data(data);
-
     //Despligo barras sin nada
+    const bars = g.selectAll("rect").data(data);
     bars
       .enter()
       .append("rect")
@@ -111,8 +109,14 @@ export default function Animation() {
     <div>
       <div id="canvas"></div>
       <div>
-        <button id="b2005">2005</button>
-        <button id="b2006">2006</button>
+        <div className="row">
+          <div className="col">
+            <button id="b2005">2005</button>
+          </div>
+          <div className="col">
+            <button id="b2006">2006</button>
+          </div>
+        </div>
       </div>
     </div>
   );
